@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="EpidemicSituationMapper">
+	<!-- EpidemicSituation管理 start -->
+	<resultMap id="BaseResultMap" type="EpidemicSituation">
+		<result column="id" property="id" />
+		<result column="type" property="type" />
+		<result column="details" property="details" />
+		<result column="extend1" property="extend1" />
+		<result column="extend2" property="extend2" />
+		<result column="extend4" property="extend4" />
+		<result column="extend5" property="extend5" />
+	</resultMap>
+
+	<insert id="insert" parameterType="EpidemicSituation">
+		insert into 
+		epidemic_situation
+		(
+		<trim suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="type != null">
+				type,
+			</if>
+			<if test="details != null">
+				details,
+			</if>
+			<if test="extend1 != null">
+				extend1,
+			</if>
+			<if test="extend2 != null">
+				extend2,
+			</if>
+			<if test="extend4 != null">
+				extend4,
+			</if>
+			<if test="extend5 != null">
+				extend5,
+			</if>
+		</trim>
+		) values (
+		<trim suffixOverrides=",">
+			<if test="id != null">
+				#{id},
+			</if>
+			<if test="type != null">
+				#{type},
+			</if>
+			<if test="details != null">
+				#{details},
+			</if>
+			<if test="extend1 != null">
+				#{extend1},
+			</if>
+			<if test="extend2 != null">
+				#{extend2},
+			</if>
+			<if test="extend4 != null">
+				#{extend4},
+			</if>
+			<if test="extend5 != null">
+				#{extend5},
+			</if>
+		</trim>
+		)
+	</insert>
+
+	<update id="delete" parameterType="EpidemicSituation">
+		delete from 
+		epidemic_situation where id=#{id}
+	</update>
+
+	<update id="update" parameterType="EpidemicSituation">
+		update 
+		epidemic_situation
+		<trim prefix="set" suffixOverrides=",">
+			<if test="id != null">
+				id = #{id},
+			</if>
+			<if test="type != null">
+				type = #{type},
+			</if>
+			<if test="details != null">
+				details = #{details},
+			</if>
+			<if test="extend1 != null">
+				extend1 = #{extend1},
+			</if>
+			<if test="extend2 != null">
+				extend2 = #{extend2},
+			</if>
+			<if test="extend4 != null">
+				extend4 = #{extend4},
+			</if>
+			<if test="extend5 != null">
+				extend5 = #{extend5},
+			</if>
+		</trim>
+		<where>id=${id}</where>
+	</update>
+
+	<select id="getByParam" parameterType="String" resultMap="BaseResultMap">
+		select * from 
+		epidemic_situation
+		<trim prefix="where" prefixOverrides="and | AND | or | OR">
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="type != null">
+				and type = #{type}
+			</if>
+			<if test="details != null">
+				and details = #{details}
+			</if>
+			<if test="extend1 != null">
+				and extend1 = #{extend1}
+			</if>
+			<if test="extend2 != null">
+				and extend2 = #{extend2}
+			</if>
+			<if test="extend4 != null">
+				and extend4 = #{extend4}
+			</if>
+			<if test="extend5 != null">
+				and extend5 = #{extend5}
+			</if>
+		</trim>
+	</select>
+
+	<select id="queryList" resultMap="BaseResultMap">
+		select * from 
+		epidemic_situation
+		<trim prefix="where" prefixOverrides="and | AND | or | OR">
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="type != null">
+				and type = #{type}
+			</if>
+			<if test="details != null">
+				and details = #{details}
+			</if>
+			<if test="extend1 != null">
+				and extend1 = #{extend1}
+			</if>
+			<if test="extend2 != null">
+				and extend2 = #{extend2}
+			</if>
+			<if test="extend4 != null">
+				and extend4 = #{extend4}
+			</if>
+			<if test="extend5 != null">
+				and extend5 = #{extend5}
+			</if>
+		</trim>
+	</select>
+
+	<select id="queryDataGrid" resultMap="BaseResultMap">
+		select * from 
+		epidemic_situation
+		<trim prefix="where" prefixOverrides="and | AND | or | OR">
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="type != null">
+				and type = #{type}
+			</if>
+			<if test="details != null">
+				and details = #{details}
+			</if>
+			<if test="extend1 != null">
+				and extend1 = #{extend1}
+			</if>
+			<if test="extend2 != null">
+				and extend2 = #{extend2}
+			</if>
+			<if test="extend4 != null">
+				and extend4 = #{extend4}
+			</if>
+			<if test="extend5 != null">
+				and extend5 = #{extend5}
+			</if>
+		</trim>
+		<if test="order != null">
+			order by ${order}
+		</if>
+		limit ${start},${rows}
+	</select>
+
+	<select id="queryDataGridCount" resultType="int">
+		select count(1) from 
+		epidemic_situation
+		<trim prefix="where" prefixOverrides="and | AND | or | OR">
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="type != null">
+				and type = #{type}
+			</if>
+			<if test="details != null">
+				and details = #{details}
+			</if>
+			<if test="extend1 != null">
+				and extend1 = #{extend1}
+			</if>
+			<if test="extend2 != null">
+				and extend2 = #{extend2}
+			</if>
+			<if test="extend4 != null">
+				and extend4 = #{extend4}
+			</if>
+			<if test="extend5 != null">
+				and extend5 = #{extend5}
+			</if>
+		</trim>
+	</select>
+
+	<!-- EpidemicSituation管理 end -->
+</mapper>

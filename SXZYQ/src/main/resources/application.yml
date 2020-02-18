@@ -1,0 +1,31 @@
+#公共配置与profiles选择无关 mapperLocations指的路径是src/main/resources
+#内置tomcat的端口分号后面加空格
+server:
+  port: 9166
+  context-path: /SXZYQ
+mybatis:
+  type-aliases-package: com.dt.entity
+  mapperLocations: classpath:mapper/*.xml
+
+#开发配置
+spring:
+  datasource:
+      url: jdbc:mysql://xxxx:xx/XZYQ?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: xxx
+      password: xxxxx
+      driver-class-name: com.mysql.jdbc.Driver
+      max-idle: 10
+      max-wait: 10000
+      min-idle: 5
+      initial-size: 5
+      validation-query: SELECT 1
+      test-on-borrow: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 18800
+#配置文件传输
+  http: 
+    multipart: 
+      enabled: true 
+      file-size-threshold: 0
+      max-file-size: 100Mb
+      max-request-size: 100Mb

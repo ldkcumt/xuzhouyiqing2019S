@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<engine>
+     <database url="jdbc:mysql://xxxx:xxx/XZYQ?characterEncoding=utf-8" 
+        database="XZYQ" 
+        username="xx" 
+        password="xxxxx"
+        dialect="mysql">
+        <modelNames>
+            <modelName></modelName>
+        </modelNames>
+        <table name="epidemic_situation"/>
+    </database>
+    <javaFile 
+     javaPath="java" 
+        resourcePath="resources"
+        path="com.dt"
+        controllerPath="controller" 
+        entityPath="entity" 
+        servicePath="service"
+        xmlPath="mapper"/>
+</engine>

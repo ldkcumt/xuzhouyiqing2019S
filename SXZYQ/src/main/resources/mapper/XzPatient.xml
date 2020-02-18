@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="XzPatientMapper">
+	<!-- XzPatient管理 start -->
+	<resultMap id="BaseResultMap" type="XzPatient">
+		<result column="id" property="id" />
+		<result column="patient_name" property="patientName" />
+		<result column="sex" property="sex" />
+		<result column="age" property="age" />
+		<result column="addr" property="addr" />
+		<result column="details" property="details" />
+		<result column="longitude" property="longitude" />
+		<result column="latitude" property="latitude" />
+		<result column="height" property="height" />
+		<result column="create_time" property="createTime" />
+		<result column="update_time" property="updateTime" />
+		<result column="extend1" property="extend1" />
+		<result column="extend2" property="extend2" />
+		<result column="extend3" property="extend3" />
+		<result column="extend4" property="extend4" />
+		<result column="extend5" property="extend5" />
+	</resultMap>
+
+	<insert id="insert" parameterType="XzPatient">
+		insert into 
+		xz_patient
+		(
+		<trim suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="patientName != null">
+				patient_name,
+			</if>
+			<if test="sex != null">
+				sex,
+			</if>
+			<if test="age != null">
+				age,
+			</if>
+			<if test="addr != null">
+				addr,
+			</if>
+			<if test="details != null">
+				details,
+			</if>
+			<if test="longitude != null">
+				longitude,
+			</if>
+			<if test="latitude != null">
+				latitude,
+			</if>
+			<if test="height != null">
+				height,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+			<if test="extend1 != null">
+				extend1,
+			</if>
+			<if test="extend2 != null">
+				extend2,
+			</if>
+			<if test="extend3 != null">
+				extend3,
+			</if>
+			<if test="extend4 != null">
+				extend4,
+			</if>
+			<if test="extend5 != null">
+				extend5,
+			</if>
+		</trim>
+		) values (
+		<trim suffixOverrides=",">
+			<if test="id != null">
+				#{id},
+			</if>
+			<if test="patientName != null">
+				#{patientName},
+			</if>
+			<if test="sex != null">
+				#{sex},
+			</if>
+			<if test="age != null">
+				#{age},
+			</if>
+			<if test="addr != null">
+				#{addr},
+			</if>
+			<if test="details != null">
+				#{details},
+			</if>
+			<if test="longitude != null">
+				#{longitude},
+			</if>
+			<if test="latitude != null">
+				#{latitude},
+			</if>
+			<if test="height != null">
+				#{height},
+			</if>
+			<if test="createTime != null">
+				#{createTime},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime},
+			</if>
+			<if test="extend1 != null">
+				#{extend1},
+			</if>
+			<if test="extend2 != null">
+				#{extend2},
+			</if>
+			<if test="extend3 != null">
+				#{extend3},
+			</if>
+			<if test="extend4 != null">
+				#{extend4},
+			</if>
+			<if test="extend5 != null">
+				#{extend5},
+			</if>
+		</trim>
+		)
+	</insert>
+
+	<update id="delete" parameterType="XzPatient">
+		delete from 
+		xz_patient where id=#{id}
+	</update>
+
+	<update id="update" parameterType="XzPatient">
+		update 
+		xz_patient
+		<trim prefix="set" suffixOverrides=",">
+			<if test="id != null">
+				id = #{id},
+			</if>
+			<if test="patientName != null">
+				patient_name = #{patientName},
+			</if>
+			<if test="sex != null">
+				sex = #{sex},
+			</if>
+			<if test="age != null">
+				age = #{age},
+			</if>
+			<if test="addr != null">
+				addr = #{addr},
+			</if>
+			<if test="details != null">
+				details = #{details},
+			</if>
+			<if test="longitude != null">
+				longitude = #{longitude},
+			</if>
+			<if test="latitude != null">
+				latitude = #{latitude},
+			</if>
+			<if test="height != null">
+				height = #{height},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime},
+			</if>
+			<if test="extend1 != null">
+				extend1 = #{extend1},
+			</if>
+			<if test="extend2 != null">
+				extend2 = #{extend2},
+			</if>
+			<if test="extend3 != null">
+				extend3 = #{extend3},
+			</if>
+			<if test="extend4 != null">
+				extend4 = #{extend4},
+			</if>
+			<if test="extend5 != null">
+				extend5 = #{extend5},
+			</if>
+		</trim>
+		<where>id=${id}</where>
+	</update>
+
+	<select id="getByParam" parameterType="String" resultMap="BaseResultMap">
+		select * from 
+		xz_patient
+		<trim prefix="where" prefixOverrides="and | AND | or | OR">
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="patientName != null">
+				and patient_name = #{patientName}
+			</if>
+			<if test="sex != null">
+				and sex = #{sex}
+			</if>
+			<if test="age != null">
+				and age = #{age}
+			</if>
+			<if test="addr != null">
+				and addr = #{addr}
+			</if>
+			<if test="details != null">
+				and details = #{details}
+			</if>
+			<if test="longitude != null">
+				and longitude = #{longitude}
+			</if>
+			<if test="latitude != null">
+				and latitude = #{latitude}
+			</if>
+			<if test="height != null">
+				and height = #{height}
+			</if>
+			<if test="createTime != null">
+				and create_time = #{createTime}
+			</if>
+			<if test="updateTime != null">
+				and update_time = #{updateTime}
+			</if>
+			<if test="extend1 != null">
+				and extend1 = #{extend1}
+			</if>
+			<if test="extend2 != null">
+				and extend2 = #{extend2}
+			</if>
+			<if test="extend3 != null">
+				and extend3 = #{extend3}
+			</if>
+			<if test="extend4 != null">
+				and extend4 = #{extend4}
+			</if>
+			<if test="extend5 != null">
+				and extend5 = #{extend5}
+			</if>
+		</trim>
+	</select>
+
+	<select id="queryList" resultMap="BaseResultMap">
+		select * from 
+		xz_patient
+		<trim prefix="where" prefixOverrides="and | AND | or | OR">
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="patientName != null">
+				and patient_name = #{patientName}
+			</if>
+			<if test="sex != null">
+				and sex = #{sex}
+			</if>
+			<if test="age != null">
+				and age = #{age}
+			</if>
+			<if test="addr != null">
+				and addr = #{addr}
+			</if>
+			<if test="details != null">
+				and details = #{details}
+			</if>
+			<if test="longitude != null">
+				and longitude = #{longitude}
+			</if>
+			<if test="latitude != null">
+				and latitude = #{latitude}
+			</if>
+			<if test="height != null">
+				and height = #{height}
+			</if>
+			<if test="createTime != null">
+				and create_time = #{createTime}
+			</if>
+			<if test="updateTime != null">
+				and update_time = #{updateTime}
+			</if>
+			<if test="extend1 != null">
+				and extend1 = #{extend1}
+			</if>
+			<if test="extend2 != null">
+				and extend2 = #{extend2}
+			</if>
+			<if test="extend3 != null">
+				and extend3 = #{extend3}
+			</if>
+			<if test="extend4 != null">
+				and extend4 = #{extend4}
+			</if>
+			<if test="extend5 != null">
+				and extend5 = #{extend5}
+			</if>
+		</trim>
+	</select>
+
+	<select id="queryDataGrid" resultMap="BaseResultMap">
+		select * from 
+		xz_patient
+		<trim prefix="where" prefixOverrides="and | AND | or | OR">
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="patientName != null">
+				and patient_name = #{patientName}
+			</if>
+			<if test="sex != null">
+				and sex = #{sex}
+			</if>
+			<if test="age != null">
+				and age = #{age}
+			</if>
+			<if test="addr != null">
+				and addr = #{addr}
+			</if>
+			<if test="details != null">
+				and details = #{details}
+			</if>
+			<if test="longitude != null">
+				and longitude = #{longitude}
+			</if>
+			<if test="latitude != null">
+				and latitude = #{latitude}
+			</if>
+			<if test="height != null">
+				and height = #{height}
+			</if>
+			<if test="createTime != null">
+				and create_time = #{createTime}
+			</if>
+			<if test="updateTime != null">
+				and update_time = #{updateTime}
+			</if>
+			<if test="extend1 != null">
+				and extend1 = #{extend1}
+			</if>
+			<if test="extend2 != null">
+				and extend2 = #{extend2}
+			</if>
+			<if test="extend3 != null">
+				and extend3 = #{extend3}
+			</if>
+			<if test="extend4 != null">
+				and extend4 = #{extend4}
+			</if>
+			<if test="extend5 != null">
+				and extend5 = #{extend5}
+			</if>
+		</trim>
+		<if test="order != null">
+			order by ${order}
+		</if>
+		limit ${start},${rows}
+	</select>
+
+	<select id="queryDataGridCount" resultType="int">
+		select count(1) from 
+		xz_patient
+		<trim prefix="where" prefixOverrides="and | AND | or | OR">
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="patientName != null">
+				and patient_name = #{patientName}
+			</if>
+			<if test="sex != null">
+				and sex = #{sex}
+			</if>
+			<if test="age != null">
+				and age = #{age}
+			</if>
+			<if test="addr != null">
+				and addr = #{addr}
+			</if>
+			<if test="details != null">
+				and details = #{details}
+			</if>
+			<if test="longitude != null">
+				and longitude = #{longitude}
+			</if>
+			<if test="latitude != null">
+				and latitude = #{latitude}
+			</if>
+			<if test="height != null">
+				and height = #{height}
+			</if>
+			<if test="createTime != null">
+				and create_time = #{createTime}
+			</if>
+			<if test="updateTime != null">
+				and update_time = #{updateTime}
+			</if>
+			<if test="extend1 != null">
+				and extend1 = #{extend1}
+			</if>
+			<if test="extend2 != null">
+				and extend2 = #{extend2}
+			</if>
+			<if test="extend3 != null">
+				and extend3 = #{extend3}
+			</if>
+			<if test="extend4 != null">
+				and extend4 = #{extend4}
+			</if>
+			<if test="extend5 != null">
+				and extend5 = #{extend5}
+			</if>
+		</trim>
+	</select>
+
+	<!-- XzPatient管理 end -->
+</mapper>
